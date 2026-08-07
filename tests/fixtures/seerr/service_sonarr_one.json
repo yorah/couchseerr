@@ -1,0 +1,11 @@
+[
+  {
+    "id": 0,
+    "name": "Sonarr 1",
+    "is4k": false,
+    "isDefault": true,
+    "activeProfileId": 12,
+    "activeLanguageProfileId": 1,
+    "activeDirectory": "/data/tv"
+  }
+]

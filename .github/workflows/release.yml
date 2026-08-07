@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Tag must match addon.xml version
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          addon=$(python scripts/build_repo.py version plugin.video.couchseerr)
+          echo "tag=$tag addon.xml=$addon"
+          if [ "$tag" != "$addon" ]; then
+            echo "FAIL: tag $tag does not match addon.xml version $addon"; exit 1
+          fi
+
+      - name: Build repository datadir
+        run: python scripts/build_repo.py dist
+
+      - name: Validate before publishing
+        run: python scripts/check_repo.py dist
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Attach zips to the GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/zips/**/*.zip

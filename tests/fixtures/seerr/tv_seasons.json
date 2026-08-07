@@ -1,0 +1,161 @@
+{
+  "id": 90100,
+  "name": "Signal Lost",
+  "overview": "A radio station keeps broadcasting after the town leaves.",
+  "firstAirDate": "2019-11-12",
+  "posterPath": "/signal-lost.jpg",
+  "backdropPath": "/signal-lost-wide.jpg",
+  "seasons": [
+    {
+      "id": 3500,
+      "airDate": "2019-10-01",
+      "episodeCount": 3,
+      "name": "Specials",
+      "overview": "",
+      "seasonNumber": 0,
+      "posterPath": "/sp.jpg"
+    },
+    {
+      "id": 3501,
+      "airDate": "2019-11-12",
+      "episodeCount": 8,
+      "name": "Season 1",
+      "overview": "",
+      "seasonNumber": 1,
+      "posterPath": "/s1.jpg"
+    },
+    {
+      "id": 3502,
+      "airDate": "2020-10-30",
+      "episodeCount": 8,
+      "name": "Season 2",
+      "overview": "",
+      "seasonNumber": 2,
+      "posterPath": null
+    },
+    {
+      "id": 3503,
+      "airDate": "2021-11-04",
+      "episodeCount": 8,
+      "name": "Season 3",
+      "overview": "",
+      "seasonNumber": 3,
+      "posterPath": null
+    },
+    {
+      "id": 3504,
+      "airDate": "2022-12-01",
+      "episodeCount": 8,
+      "name": "Season 4",
+      "overview": "",
+      "seasonNumber": 4,
+      "posterPath": null
+    },
+    {
+      "id": 3505,
+      "airDate": "2023-12-06",
+      "episodeCount": 8,
+      "name": "Season 5",
+      "overview": "",
+      "seasonNumber": 5,
+      "posterPath": null
+    },
+    {
+      "id": 3506,
+      "airDate": "2027-01-14",
+      "episodeCount": 8,
+      "name": "Season 6",
+      "overview": "",
+      "seasonNumber": 6,
+      "posterPath": null
+    },
+    {
+      "id": 3507,
+      "airDate": null,
+      "episodeCount": 0,
+      "name": "Season 7",
+      "overview": "",
+      "seasonNumber": 7,
+      "posterPath": null
+    }
+  ],
+  "externalIds": {
+    "tvdbId": 90001,
+    "imdbId": null
+  },
+  "relatedVideos": [
+    {
+      "site": "YouTube",
+      "key": "trailer-key",
+      "type": "Trailer"
+    }
+  ],
+  "mediaInfo": {
+    "downloadStatus": [],
+    "downloadStatus4k": [],
+    "id": 41,
+    "mediaType": "tv",
+    "tmdbId": 90100,
+    "tvdbId": 90001,
+    "imdbId": null,
+    "status": 4,
+    "status4k": 1,
+    "createdAt": "2026-01-05T10:00:00.000Z",
+    "updatedAt": "2026-01-06T10:00:00.000Z",
+    "lastSeasonChange": "2026-01-05T10:00:00.000Z",
+    "mediaAddedAt": "2026-01-05T10:00:00.000Z",
+    "serviceId": 0,
+    "serviceId4k": null,
+    "externalServiceId": 1041,
+    "externalServiceId4k": null,
+    "externalServiceSlug": "90100",
+    "externalServiceSlug4k": null,
+    "ratingKey": null,
+    "ratingKey4k": null,
+    "jellyfinMediaId": null,
+    "jellyfinMediaId4k": null,
+    "seasons": [
+      {
+        "id": 31,
+        "seasonNumber": 1,
+        "status": 5,
+        "status4k": 1,
+        "createdAt": "2026-01-05T10:00:00.000Z",
+        "updatedAt": "2026-01-06T10:00:00.000Z"
+      },
+      {
+        "id": 32,
+        "seasonNumber": 2,
+        "status": 4,
+        "status4k": 1,
+        "createdAt": "2026-01-05T10:00:00.000Z",
+        "updatedAt": "2026-01-06T10:00:00.000Z"
+      },
+      {
+        "id": 33,
+        "seasonNumber": 3,
+        "status": 3,
+        "status4k": 1,
+        "createdAt": "2026-01-05T10:00:00.000Z",
+        "updatedAt": "2026-01-06T10:00:00.000Z"
+      },
+      {
+        "id": 34,
+        "seasonNumber": 4,
+        "status": 2,
+        "status4k": 1,
+        "createdAt": "2026-01-05T10:00:00.000Z",
+        "updatedAt": "2026-01-06T10:00:00.000Z"
+      },
+      {
+        "id": 36,
+        "seasonNumber": 6,
+        "status": 3,
+        "status4k": 1,
+        "createdAt": "2026-01-05T10:00:00.000Z",
+        "updatedAt": "2026-01-06T10:00:00.000Z"
+      }
+    ],
+    "serviceUrl": "http://radarr.example.internal/movie/90100"
+  }
+}

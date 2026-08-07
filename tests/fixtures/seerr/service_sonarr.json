@@ -1,0 +1,20 @@
+[
+  {
+    "id": 0,
+    "name": "Series",
+    "is4k": false,
+    "isDefault": true,
+    "activeDirectory": "/series",
+    "activeProfileId": 10,
+    "activeLanguageProfileId": 1
+  },
+  {
+    "id": 1,
+    "name": "Series 4K",
+    "is4k": true,
+    "isDefault": false,
+    "activeDirectory": "/series-4k",
+    "activeProfileId": 11,
+    "activeLanguageProfileId": 1
+  }
+]

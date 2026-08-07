@@ -1,0 +1,26 @@
+{
+  "server": {
+    "id": 0,
+    "name": "Radarr 1",
+    "is4k": false,
+    "isDefault": true,
+    "activeProfileId": 21,
+    "activeDirectory": "/data/movies"
+  },
+  "profiles": [
+    {
+      "id": 21,
+      "name": "VF Bluray-1080p"
+    },
+    {
+      "id": 7,
+      "name": "Ultra-HD"
+    }
+  ],
+  "rootFolders": [
+    {
+      "id": 1,
+      "path": "/data/movies"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # 3.8 is the source-level floor; 3.13 is what the target device actually runs.
+        python-version: ["3.8", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install test dependencies
+        run: pip install pytest
+      - name: Byte-compile
+        run: python -m compileall -q plugin.video.couchseerr
+      - name: Tests
+        run: python -m pytest -q
+      - name: Core stays free of Kodi imports
+        run: python scripts/check_no_kodi_imports.py
+      - name: No secrets or private data in the tree
+        run: python scripts/check_no_secrets.py
+      - name: Fixtures match their generator
+        run: |
+          python tests/fixtures/generate.py > /dev/null
+          git diff --exit-code tests/fixtures/seerr
+      - name: Repository datadir builds and validates
+        run: |
+          python scripts/build_repo.py dist
+          python scripts/check_repo.py dist
+
+  addon-checker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install kodi-addon-checker
+      # Checked against the oldest and newest branches we claim to support, since the
+      # rule sets differ and passing one does not imply passing the other.
+      - run: kodi-addon-checker --branch=matrix plugin.video.couchseerr
+      - run: kodi-addon-checker --branch=omega plugin.video.couchseerr
+
+  version-gate:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Addon changes require a version bump
+        run: |
+          base="origin/${{ github.base_ref }}"
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          if git diff --quiet "$base" HEAD -- plugin.video.couchseerr; then
+            echo "addon untouched, no bump required"; exit 0
+          fi
+          # Extracted via the ElementTree-based helper in build_repo.py, not grep: the
+          # addon.xml XML declaration also contains version="1.0", which a naive
+          # `grep -oP 'version="\K[0-9.]+'` matches before it ever reaches the real
+          # <addon version="..."> attribute, so it always compares "1.0" to "1.0".
+          git show "$base:plugin.video.couchseerr/addon.xml" > /tmp/old_addon.xml
+          old=$(python scripts/build_repo.py version /tmp/old_addon.xml)
+          new=$(python scripts/build_repo.py version plugin.video.couchseerr)
+          echo "addon.xml version: $old -> $new"
+          if [ "$old" = "$new" ]; then
+            echo "FAIL: addon changed without a version bump"; exit 1
+          fi

@@ -1,0 +1,38 @@
+{
+  "episodes": [
+    {
+      "episodeid": 11,
+      "episode": 1,
+      "season": 1,
+      "title": "Carrier Wave",
+      "plot": "The tower stays lit.",
+      "firstaired": "2019-11-12",
+      "playcount": 1,
+      "resume": {
+        "position": 0,
+        "total": 0
+      },
+      "runtime": 2700,
+      "art": {
+        "thumb": "image://episode-11/"
+      }
+    },
+    {
+      "episodeid": 12,
+      "episode": 2,
+      "season": 1,
+      "title": "Dead Air",
+      "plot": "Nobody answers.",
+      "firstaired": "2019-11-19",
+      "playcount": 0,
+      "resume": {
+        "position": 420.0,
+        "total": 2700.0
+      },
+      "runtime": 2700,
+      "art": {
+        "thumb": "image://episode-12/"
+      }
+    }
+  ]
+}

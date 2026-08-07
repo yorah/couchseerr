@@ -1,0 +1,85 @@
+{
+  "pageInfo": {
+    "pages": 1,
+    "pageSize": 10,
+    "results": 1,
+    "page": 1
+  },
+  "results": [
+    {
+      "id": 1,
+      "status": 2,
+      "createdAt": "2026-01-05T10:00:00.000Z",
+      "updatedAt": "2026-01-05T10:00:00.000Z",
+      "type": "movie",
+      "is4k": false,
+      "serverId": 0,
+      "profileId": 1,
+      "profileName": "Standard 1080p",
+      "rootFolder": "/movies",
+      "languageProfileId": null,
+      "tags": [],
+      "isAutoRequest": false,
+      "canRemove": true,
+      "seasons": [],
+      "seasonCount": 0,
+      "media": {
+        "downloadStatus": [
+          {
+            "mediaType": "movie",
+            "externalId": 1001,
+            "size": 8000000000,
+            "sizeLeft": 3040000000,
+            "status": "downloading",
+            "timeLeft": "00:14:32",
+            "estimatedCompletionTime": "2026-01-06T10:14:32.000Z",
+            "title": "Placeholder.Release.2160p"
+          }
+        ],
+        "downloadStatus4k": [],
+        "id": 3,
+        "mediaType": "movie",
+        "tmdbId": 103,
+        "tvdbId": null,
+        "imdbId": null,
+        "status": 3,
+        "status4k": 1,
+        "createdAt": "2026-01-05T10:00:00.000Z",
+        "updatedAt": "2026-01-06T10:00:00.000Z",
+        "lastSeasonChange": "2026-01-05T10:00:00.000Z",
+        "mediaAddedAt": "2026-01-05T10:00:00.000Z",
+        "serviceId": 0,
+        "serviceId4k": null,
+        "externalServiceId": 1003,
+        "externalServiceId4k": null,
+        "externalServiceSlug": "103",
+        "externalServiceSlug4k": null,
+        "ratingKey": null,
+        "ratingKey4k": null,
+        "jellyfinMediaId": null,
+        "jellyfinMediaId4k": null,
+        "seasons": [],
+        "serviceUrl": "http://radarr.example.internal/movie/103"
+      },
+      "requestedBy": {
+        "id": 1,
+        "email": "user@example.com",
+        "username": "fixture-user",
+        "plexUsername": null,
+        "jellyfinUsername": null,
+        "userType": 1,
+        "permissions": 2,
+        "avatar": "/avatar.png",
+        "warnings": [],
+        "movieQuotaLimit": null,
+        "movieQuotaDays": null,
+        "tvQuotaLimit": null,
+        "tvQuotaDays": null,
+        "createdAt": "2025-01-01T00:00:00.000Z",
+        "updatedAt": "2025-01-01T00:00:00.000Z",
+        "requestCount": 1
+      },
+      "modifiedBy": null
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": 42,
+  "status": 1,
+  "type": "movie",
+  "media": {
+    "id": 9,
+    "tmdbId": 693134,
+    "status": 3,
+    "status4k": 1
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "page": 1,
+  "totalPages": 1,
+  "totalResults": 3,
+  "results": [
+    {
+      "id": 201,
+      "mediaType": "movie",
+      "title": "Fixture Search Movie",
+      "originalTitle": "Fixture Search Movie",
+      "releaseDate": "2024-03-01",
+      "overview": "A synthetic search hit.",
+      "posterPath": "/fixtureSearchPoster.jpg",
+      "backdropPath": "/fixtureSearchBackdrop.jpg",
+      "mediaInfo": {
+        "status": 5,
+        "status4k": 1
+      }
+    },
+    {
+      "id": 202,
+      "mediaType": "tv",
+      "name": "Fixture Search Series",
+      "originalName": "Fixture Search Series",
+      "firstAirDate": "2023-09-10",
+      "overview": "A synthetic series hit.",
+      "posterPath": "/fixtureSearchSeriesPoster.jpg",
+      "backdropPath": null
+    },
+    {
+      "id": 203,
+      "mediaType": "person",
+      "name": "Fixture Person",
+      "profilePath": "/fixturePerson.jpg"
+    }
+  ]
+}
