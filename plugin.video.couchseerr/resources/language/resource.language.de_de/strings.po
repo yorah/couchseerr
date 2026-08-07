@@ -1,0 +1,265 @@
+# Kodi Media Center language file
+# Addon Name: Couchseerr
+# Addon id: plugin.video.couchseerr
+# Addon Provider: yorah
+msgid ""
+msgstr ""
+"Project-Id-Version: plugin.video.couchseerr\n"
+"Report-Msgid-Bugs-To: https://github.com/yorah/couchseerr\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: yorah\n"
+"Language-Team: German (Germany)\n"
+"Language: de_de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30000"
+msgid "Couchseerr"
+msgstr "Couchseerr"
+
+msgctxt "#30010"
+msgid "Connection"
+msgstr "Verbindung"
+
+msgctxt "#30011"
+msgid "Seerr URL"
+msgstr "Seerr-URL"
+
+msgctxt "#30012"
+msgid "Seerr URL, including the port, for example http://nas:5055"
+msgstr "Seerr-URL einschließlich Port, zum Beispiel http://nas:5055"
+
+msgctxt "#30013"
+msgid "API key"
+msgstr "API-Schlüssel"
+
+msgctxt "#30014"
+msgid "Seerr API key, from Settings, General in the seerr web interface"
+msgstr "Seerr-API-Schlüssel, aus Einstellungen, Allgemein in der seerr-Weboberfläche"
+
+msgctxt "#30020"
+msgid "Display"
+msgstr "Anzeige"
+
+msgctxt "#30021"
+msgid "Language code"
+msgstr "Sprachcode"
+
+msgctxt "#30022"
+msgid "Two-letter code such as fr. Blank uses the Kodi interface language."
+msgstr "Zweibuchstabiger Code wie fr. Leer verwendet die Kodi-Oberflächensprache."
+
+msgctxt "#30023"
+msgid "View mode id"
+msgstr "Ansichtsnummer"
+
+msgctxt "#30024"
+msgid "Skin-specific view number, applied when browsing into the addon. Blank leaves Kodi's own choice alone. Home widgets are configured in the skin, not here."
+msgstr "Skin-spezifische Ansichtsnummer, angewendet beim Öffnen des Addons. Leer lässt Kodis eigene Wahl unverändert. Startseiten-Widgets werden im Skin konfiguriert, nicht hier."
+
+msgctxt "#30030"
+msgid "Requests"
+msgstr "Anfragen"
+
+msgctxt "#30040"
+msgid "Play"
+msgstr "Abspielen"
+
+msgctxt "#30041"
+msgid "Request"
+msgstr "Anfragen"
+
+msgctxt "#30042"
+msgid "Request with..."
+msgstr "Anfragen mit..."
+
+msgctxt "#30043"
+msgid "Trailer"
+msgstr "Trailer"
+
+msgctxt "#30044"
+msgid "Configure default profile"
+msgstr "Standardprofil einrichten"
+
+msgctxt "#30045"
+msgid "Not in the Kodi library"
+msgstr "Nicht in der Kodi-Bibliothek"
+
+msgctxt "#30046"
+msgid "Trending"
+msgstr "Im Trend"
+
+msgctxt "#30047"
+msgid "Upcoming movies"
+msgstr "Kommende Filme"
+
+msgctxt "#30048"
+msgid "Popular series"
+msgstr "Beliebte Serien"
+
+msgctxt "#30049"
+msgid "On the way"
+msgstr "Unterwegs"
+
+msgctxt "#30050"
+msgid "Already available"
+msgstr "Bereits verfügbar"
+
+msgctxt "#30051"
+msgid "Already partially available"
+msgstr "Bereits teilweise verfügbar"
+
+msgctxt "#30052"
+msgid "Already downloading"
+msgstr "Wird bereits heruntergeladen"
+
+msgctxt "#30053"
+msgid "Already monitored"
+msgstr "Bereits überwacht"
+
+msgctxt "#30054"
+msgid "Already monitored, not yet released"
+msgstr "Bereits überwacht, noch nicht erschienen"
+
+msgctxt "#30055"
+msgid "Already requested, awaiting approval"
+msgstr "Bereits angefragt, wartet auf Freigabe"
+
+msgctxt "#30056"
+msgid "Requested: {0}"
+msgstr "Angefragt: {0}"
+
+msgctxt "#30057"
+msgid "Not requested: {0}"
+msgstr "Nicht angefragt: {0}"
+
+msgctxt "#30058"
+msgid "No default profile configured"
+msgstr "Kein Standardprofil eingerichtet"
+
+msgctxt "#30060"
+msgid "Downloading {0}%"
+msgstr "Wird heruntergeladen {0} %"
+
+msgctxt "#30061"
+msgid "Monitored"
+msgstr "Überwacht"
+
+msgctxt "#30062"
+msgid "Releasing {0}"
+msgstr "Erscheint {0}"
+
+msgctxt "#30063"
+msgid "Awaiting approval"
+msgstr "Wartet auf Freigabe"
+
+msgctxt "#30064"
+msgid "Partially available"
+msgstr "Teilweise verfügbar"
+
+msgctxt "#30070"
+msgid "Movie profile"
+msgstr "Filmprofil"
+
+msgctxt "#30071"
+msgid "Radarr server and quality profile used for ordinary film requests"
+msgstr "Radarr-Server und Qualitätsprofil für gewöhnliche Filmanfragen"
+
+msgctxt "#30072"
+msgid "TV profile"
+msgstr "Serienprofil"
+
+msgctxt "#30073"
+msgid "Sonarr server and quality profile used for ordinary series requests"
+msgstr "Sonarr-Server und Qualitätsprofil für gewöhnliche Serienanfragen"
+
+msgctxt "#30074"
+msgid "Movie profile (4K)"
+msgstr "Filmprofil (4K)"
+
+msgctxt "#30075"
+msgid "Radarr server and quality profile used for 4K film requests"
+msgstr "Radarr-Server und Qualitätsprofil für 4K-Filmanfragen"
+
+msgctxt "#30076"
+msgid "TV profile (4K)"
+msgstr "Serienprofil (4K)"
+
+msgctxt "#30077"
+msgid "Sonarr server and quality profile used for 4K series requests"
+msgstr "Sonarr-Server und Qualitätsprofil für 4K-Serienanfragen"
+
+msgctxt "#30078"
+msgid "Prefer 4K"
+msgstr "4K bevorzugen"
+
+msgctxt "#30079"
+msgid "Use the 4K profile for ordinary requests when a 4K server is configured"
+msgstr "Das 4K-Profil für gewöhnliche Anfragen verwenden, wenn ein 4K-Server eingerichtet ist"
+
+msgctxt "#30080"
+msgid "4K movie server detected"
+msgstr "4K-Filmserver erkannt"
+
+msgctxt "#30081"
+msgid "Set automatically when a 4K Radarr server is found on seerr"
+msgstr "Wird automatisch gesetzt, wenn ein 4K-Radarr-Server auf seerr gefunden wird"
+
+msgctxt "#30082"
+msgid "4K TV server detected"
+msgstr "4K-Serienserver erkannt"
+
+msgctxt "#30083"
+msgid "Set automatically when a 4K Sonarr server is found on seerr"
+msgstr "Wird automatisch gesetzt, wenn ein 4K-Sonarr-Server auf seerr gefunden wird"
+
+msgctxt "#30084"
+msgid "Choose profile"
+msgstr "Profil wählen"
+
+msgctxt "#30085"
+msgid "Profile saved: {0}"
+msgstr "Profil gespeichert: {0}"
+
+msgctxt "#30086"
+msgid "No Radarr server is configured in seerr"
+msgstr "In seerr ist kein Radarr-Server eingerichtet"
+
+msgctxt "#30087"
+msgid "No Sonarr server is configured in seerr"
+msgstr "In seerr ist kein Sonarr-Server eingerichtet"
+
+msgctxt "#30088"
+msgid "Seasons"
+msgstr "Staffeln"
+
+msgctxt "#30089"
+msgid "Season {0}"
+msgstr "Staffel {0}"
+
+msgctxt "#30090"
+msgid "Request this season"
+msgstr "Diese Staffel anfragen"
+
+msgctxt "#30091"
+msgid "No season information"
+msgstr "Keine Staffelinformationen"
+
+msgctxt "#30092"
+msgid "Check your seerr URL and API key: {0}"
+msgstr "Prüfen Sie seerr-URL und API-Schlüssel: {0}"
+
+msgctxt "#30093"
+msgid "Unexpected error - see log"
+msgstr "Unerwarteter Fehler - siehe Protokoll"
+
+msgctxt "#30094"
+msgid "{0} episodes"
+msgstr "{0} Folgen"
+
+msgctxt "#30095"
+msgid "Not available to play"
+msgstr "Wiedergabe nicht möglich"

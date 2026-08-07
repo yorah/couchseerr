@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.coverage
+htmlcov/
+
+# Working notes holding infrastructure details (hosts, IPs, key paths, API keys).
+# Anything published must stay free of these; put private notes here instead.
+docs/private/
+*.local.md
+
+# Build output and agent scratch space.
+dist/
+.superpowers/

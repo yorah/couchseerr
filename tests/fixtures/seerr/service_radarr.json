@@ -1,0 +1,18 @@
+[
+  {
+    "id": 0,
+    "name": "Movies",
+    "is4k": false,
+    "isDefault": true,
+    "activeDirectory": "/movies",
+    "activeProfileId": 1
+  },
+  {
+    "id": 1,
+    "name": "Movies 4K",
+    "is4k": true,
+    "isDefault": false,
+    "activeDirectory": "/movies-4k",
+    "activeProfileId": 2
+  }
+]

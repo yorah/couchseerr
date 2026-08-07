@@ -1,0 +1,7 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [
+    "plugin.video.couchseerr/resources/lib",
+    "tests/stubs",
+    "scripts",
+]

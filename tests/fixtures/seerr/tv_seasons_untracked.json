@@ -1,0 +1,94 @@
+{
+  "id": 90101,
+  "name": "Nobody Asked",
+  "overview": "A radio station keeps broadcasting after the town leaves.",
+  "firstAirDate": "2019-11-12",
+  "posterPath": "/signal-lost.jpg",
+  "backdropPath": "/signal-lost-wide.jpg",
+  "seasons": [
+    {
+      "id": 3500,
+      "airDate": "2019-10-01",
+      "episodeCount": 3,
+      "name": "Specials",
+      "overview": "",
+      "seasonNumber": 0,
+      "posterPath": "/sp.jpg"
+    },
+    {
+      "id": 3501,
+      "airDate": "2019-11-12",
+      "episodeCount": 8,
+      "name": "Season 1",
+      "overview": "",
+      "seasonNumber": 1,
+      "posterPath": "/s1.jpg"
+    },
+    {
+      "id": 3502,
+      "airDate": "2020-10-30",
+      "episodeCount": 8,
+      "name": "Season 2",
+      "overview": "",
+      "seasonNumber": 2,
+      "posterPath": null
+    },
+    {
+      "id": 3503,
+      "airDate": "2021-11-04",
+      "episodeCount": 8,
+      "name": "Season 3",
+      "overview": "",
+      "seasonNumber": 3,
+      "posterPath": null
+    },
+    {
+      "id": 3504,
+      "airDate": "2022-12-01",
+      "episodeCount": 8,
+      "name": "Season 4",
+      "overview": "",
+      "seasonNumber": 4,
+      "posterPath": null
+    },
+    {
+      "id": 3505,
+      "airDate": "2023-12-06",
+      "episodeCount": 8,
+      "name": "Season 5",
+      "overview": "",
+      "seasonNumber": 5,
+      "posterPath": null
+    },
+    {
+      "id": 3506,
+      "airDate": "2027-01-14",
+      "episodeCount": 8,
+      "name": "Season 6",
+      "overview": "",
+      "seasonNumber": 6,
+      "posterPath": null
+    },
+    {
+      "id": 3507,
+      "airDate": null,
+      "episodeCount": 0,
+      "name": "Season 7",
+      "overview": "",
+      "seasonNumber": 7,
+      "posterPath": null
+    }
+  ],
+  "externalIds": {
+    "tvdbId": 90001,
+    "imdbId": null
+  },
+  "relatedVideos": [
+    {
+      "site": "YouTube",
+      "key": "trailer-key",
+      "type": "Trailer"
+    }
+  ],
+  "mediaInfo": null
+}

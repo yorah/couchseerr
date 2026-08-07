@@ -1,0 +1,39 @@
+{
+  "id": 3501,
+  "airDate": "2019-11-12",
+  "name": "Season 1",
+  "overview": "",
+  "posterPath": "/s1.jpg",
+  "seasonNumber": 1,
+  "externalIds": {
+    "tvdbId": 890100
+  },
+  "episodes": [
+    {
+      "id": 40101,
+      "airDate": "2019-11-12",
+      "episodeNumber": 1,
+      "name": "Carrier Wave",
+      "overview": "",
+      "productionCode": "",
+      "seasonNumber": 1,
+      "showId": 90100,
+      "stillPath": "https://image.tmdb.org/t/p/original//still-s1e1.jpg",
+      "voteAverage": 7.5,
+      "voteCount": 100
+    },
+    {
+      "id": 40102,
+      "airDate": "2019-11-19",
+      "episodeNumber": 2,
+      "name": "Dead Air",
+      "overview": "",
+      "productionCode": "",
+      "seasonNumber": 1,
+      "showId": 90100,
+      "stillPath": "https://image.tmdb.org/t/p/original//still-s1e2.jpg",
+      "voteAverage": 7.5,
+      "voteCount": 100
+    }
+  ]
+}

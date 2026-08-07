@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Couchseerr's own detail window. Coordinates are 1080i (1920x1080).
+
+     No skin dependency by design: every colour is a hex ARGB literal, every texture is
+     the addon's own white.png tinted with colordiffuse, and the only font names used are
+     the core set every skin defines. An unknown font name degrades to Kodi's default
+     font, and a texture that does not resolve simply does not draw, so a skin this was
+     never tested against loses decoration, never function. -->
+<window>
+  <defaultcontrol always="true">51</defaultcontrol>
+  <controls>
+
+    <!-- Backdrop. background="true" loads it off the GUI thread, which matters on the
+         Ugoos: a 1080p fanart decoded inline is a visible stall on that box. -->
+    <control type="image">
+      <left>0</left><top>0</top><width>1920</width><height>1080</height>
+      <aspectratio>scale</aspectratio>
+      <texture background="true">$INFO[Window.Property(fanart)]</texture>
+    </control>
+
+    <!-- Scrim. Without it, light artwork makes every label below unreadable. -->
+    <control type="image">
+      <left>0</left><top>0</top><width>1920</width><height>1080</height>
+      <texture>white.png</texture>
+      <colordiffuse>E6101418</colordiffuse>
+    </control>
+
+    <!-- Poster -->
+    <control type="image">
+      <left>60</left><top>90</top><width>300</width><height>450</height>
+      <aspectratio align="center" aligny="center">keep</aspectratio>
+      <texture>$INFO[Window.Property(poster)]</texture>
+    </control>
+
+    <!-- Title. Bottom-aligned in a three-line box rather than top-aligned in a two-line
+         one: a wrapped label overflows the height it declares rather than clipping, so
+         "Miraculous, les aventures de Ladybug et Chat Noir" used to draw its third line
+         straight through the year below it. Growing upwards from a fixed baseline keeps
+         short titles sitting where they always did and gives long ones somewhere to go. -->
+    <control type="label">
+      <left>400</left><top>28</top><width>440</width><height>168</height>
+      <aligny>bottom</aligny>
+      <font>font45</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <label>$INFO[Window.Property(title)]</label>
+      <wrapmultiline>true</wrapmultiline>
+    </control>
+
+    <!-- Year, then the status line, already joined by kodi/window.py's
+         _year_status_line: Kodi's $INFO[label,prefix,postfix] form wraps one label's own
+         value, it cannot conditionally glue two different properties together, so the
+         window composes this line itself rather than leaving it to the XML. -->
+    <control type="label">
+      <left>400</left><top>204</top><width>440</width><height>36</height>
+      <font>font16</font>
+      <textcolor>FF9FB0BF</textcolor>
+      <label>$INFO[Window.Property(year_status)]</label>
+    </control>
+
+    <control type="textbox">
+      <left>400</left><top>252</top><width>440</width><height>288</height>
+      <font>font13</font>
+      <textcolor>FFD8DEE4</textcolor>
+      <label>$INFO[Window.Property(plot)]</label>
+      <autoscroll time="3000" delay="8000" repeat="10000">true</autoscroll>
+    </control>
+
+    <!-- Actions. A list, not a row of buttons: the set of actions varies per title, and
+         a fixed button per action is exactly the hardcoded-control-id design that makes
+         Kodi's own info dialog unable to carry a Request button. -->
+    <control type="list" id="51">
+      <left>60</left><top>580</top><width>780</width><height>92</height>
+      <orientation>horizontal</orientation>
+      <onup>50</onup>
+      <ondown>50</ondown>
+      <onright>50</onright>
+      <itemlayout width="252" height="92">
+        <control type="image">
+          <left>2</left><top>2</top><width>248</width><height>88</height>
+          <texture>white.png</texture>
+          <colordiffuse>26FFFFFF</colordiffuse>
+        </control>
+        <control type="label">
+          <left>16</left><top>0</top><width>220</width><height>92</height>
+          <align>center</align><aligny>center</aligny>
+          <font>font16</font>
+          <textcolor>FFE8E8E8</textcolor>
+          <label>$INFO[ListItem.Label]</label>
+        </control>
+      </itemlayout>
+      <!-- Kodi draws focusedlayout for a list's selected item whether or not the list
+           has the focus, so both lists showed a lit row at once and nothing on screen
+           said where the remote actually was. Every focused treatment below is gated on
+           Control.HasFocus, and the unfocused half repeats itemlayout's own colours. -->
+      <focusedlayout width="252" height="92">
+        <control type="image">
+          <left>2</left><top>2</top><width>248</width><height>88</height>
+          <texture>white.png</texture>
+          <colordiffuse>FF3FA9F5</colordiffuse>
+          <visible>Control.HasFocus(51)</visible>
+        </control>
+        <control type="image">
+          <left>2</left><top>2</top><width>248</width><height>88</height>
+          <texture>white.png</texture>
+          <colordiffuse>26FFFFFF</colordiffuse>
+          <visible>!Control.HasFocus(51)</visible>
+        </control>
+        <control type="label">
+          <left>16</left><top>0</top><width>220</width><height>92</height>
+          <align>center</align><aligny>center</aligny>
+          <font>font16</font>
+          <textcolor>FF08121A</textcolor>
+          <label>$INFO[ListItem.Label]</label>
+          <visible>Control.HasFocus(51)</visible>
+        </control>
+        <control type="label">
+          <left>16</left><top>0</top><width>220</width><height>92</height>
+          <align>center</align><aligny>center</aligny>
+          <font>font16</font>
+          <textcolor>FFE8E8E8</textcolor>
+          <label>$INFO[ListItem.Label]</label>
+          <visible>!Control.HasFocus(51)</visible>
+        </control>
+      </focusedlayout>
+    </control>
+
+    <!-- Section heading. Visible on its own property, not on `section`: a show with no
+         season data shows the "No season information" heading over an empty list. -->
+    <control type="label">
+      <left>900</left><top>96</top><width>960</width><height>44</height>
+      <font>font16</font>
+      <textcolor>FF7FD1FF</textcolor>
+      <label>$INFO[Window.Property(section_header)]</label>
+      <visible>!String.IsEmpty(Window.Property(section_header))</visible>
+    </control>
+    <control type="image">
+      <left>900</left><top>142</top><width>960</width><height>2</height>
+      <texture>white.png</texture>
+      <colordiffuse>593FA9F5</colordiffuse>
+      <visible>!String.IsEmpty(Window.Property(section_header))</visible>
+    </control>
+
+    <!-- Seasons, or one season's episodes. One control with swapped content rather than
+         two with visibility toggles: identical geometry, one state machine, and the
+         window sets focus explicitly on every swap anyway. -->
+    <control type="list" id="50">
+      <left>900</left><top>160</top><width>960</width><height>832</height>
+      <orientation>vertical</orientation>
+      <onleft>51</onleft>
+      <onright>51</onright>
+      <visible>!String.IsEmpty(Window.Property(section))</visible>
+      <itemlayout width="960" height="64">
+        <control type="image">
+          <left>0</left><top>1</top><width>960</width><height>62</height>
+          <texture>white.png</texture>
+          <colordiffuse>14FFFFFF</colordiffuse>
+        </control>
+        <!-- The marker column is right-aligned, not left: it has to be wide enough for
+             the longest marker markers.py can produce ("[2026-10-22]", "[42% · 1h 12m]")
+             while the common ones are three glyphs, and left-aligning those left a hole
+             between the marker and the season name it belongs to. -->
+        <control type="label">
+          <left>16</left><top>0</top><width>152</width><height>64</height>
+          <align>right</align><aligny>center</aligny>
+          <font>font13</font>
+          <textcolor>FF7FD1FF</textcolor>
+          <label>$INFO[ListItem.Property(couchseerr.marker)]</label>
+        </control>
+        <control type="label">
+          <left>180</left><top>0</top><width>596</width><height>64</height>
+          <aligny>center</aligny>
+          <font>font13</font>
+          <textcolor>FFE8E8E8</textcolor>
+          <label>$INFO[ListItem.Label]</label>
+          <visible>String.IsEmpty(ListItem.Property(couchseerr.inert))</visible>
+        </control>
+        <!-- An unowned episode: readable, dimmer, and it leads nowhere. -->
+        <control type="label">
+          <left>180</left><top>0</top><width>596</width><height>64</height>
+          <aligny>center</aligny>
+          <font>font13</font>
+          <textcolor>FF6B7783</textcolor>
+          <label>$INFO[ListItem.Label]</label>
+          <visible>!String.IsEmpty(ListItem.Property(couchseerr.inert))</visible>
+        </control>
+        <control type="label">
+          <left>790</left><top>0</top><width>154</width><height>64</height>
+          <align>right</align><aligny>center</aligny>
+          <font>font12</font>
+          <textcolor>FF8FA0AF</textcolor>
+          <label>$INFO[ListItem.Property(couchseerr.detail)]</label>
+        </control>
+      </itemlayout>
+      <!-- Same rule as the action list above: focusedlayout is what Kodi draws for the
+           selected row even when the remote is in the other list, so every focused
+           treatment is gated on Control.HasFocus(50) and the unfocused half repeats
+           itemlayout. The inert split is unchanged and crosses it: an unowned episode
+           gets a muted bar when this list has the focus, and no bar at all when it does
+           not, exactly like every other row. -->
+      <focusedlayout width="960" height="64">
+        <control type="image">
+          <left>0</left><top>1</top><width>960</width><height>62</height>
+          <texture>white.png</texture>
+          <colordiffuse>FF3FA9F5</colordiffuse>
+          <visible>Control.HasFocus(50) + String.IsEmpty(ListItem.Property(couchseerr.inert))</visible>
+        </control>
+        <!-- A muted focus bar on an inert row, so the user can tell before pressing OK
+             that this episode has nothing behind it. -->
+        <control type="image">
+          <left>0</left><top>1</top><width>960</width><height>62</height>
+          <texture>white.png</texture>
+          <colordiffuse>4D6B7783</colordiffuse>
+          <visible>Control.HasFocus(50) + !String.IsEmpty(ListItem.Property(couchseerr.inert))</visible>
+        </control>
+        <control type="image">
+          <left>0</left><top>1</top><width>960</width><height>62</height>
+          <texture>white.png</texture>
+          <colordiffuse>14FFFFFF</colordiffuse>
+          <visible>!Control.HasFocus(50)</visible>
+        </control>
+        <control type="label">
+          <left>16</left><top>0</top><width>152</width><height>64</height>
+          <align>right</align><aligny>center</aligny>
+          <font>font13</font>
+          <textcolor>FF08121A</textcolor>
+          <label>$INFO[ListItem.Property(couchseerr.marker)]</label>
+          <visible>Control.HasFocus(50) + String.IsEmpty(ListItem.Property(couchseerr.inert))</visible>
+        </control>
+        <control type="label">
+          <left>16</left><top>0</top><width>152</width><height>64</height>
+          <align>right</align><aligny>center</aligny>
+          <font>font13</font>
+          <textcolor>FF7FD1FF</textcolor>
+          <label>$INFO[ListItem.Property(couchseerr.marker)]</label>
+          <visible>!Control.HasFocus(50)</visible>
+        </control>
+        <control type="label">
+          <left>180</left><top>0</top><width>596</width><height>64</height>
+          <aligny>center</aligny>
+          <font>font13</font>
+          <textcolor>FF08121A</textcolor>
+          <label>$INFO[ListItem.Label]</label>
+          <visible>Control.HasFocus(50) + String.IsEmpty(ListItem.Property(couchseerr.inert))</visible>
+        </control>
+        <control type="label">
+          <left>180</left><top>0</top><width>596</width><height>64</height>
+          <aligny>center</aligny>
+          <font>font13</font>
+          <textcolor>FFC2CBD4</textcolor>
+          <label>$INFO[ListItem.Label]</label>
+          <visible>Control.HasFocus(50) + !String.IsEmpty(ListItem.Property(couchseerr.inert))</visible>
+        </control>
+        <control type="label">
+          <left>180</left><top>0</top><width>596</width><height>64</height>
+          <aligny>center</aligny>
+          <font>font13</font>
+          <textcolor>FFE8E8E8</textcolor>
+          <label>$INFO[ListItem.Label]</label>
+          <visible>!Control.HasFocus(50) + String.IsEmpty(ListItem.Property(couchseerr.inert))</visible>
+        </control>
+        <control type="label">
+          <left>180</left><top>0</top><width>596</width><height>64</height>
+          <aligny>center</aligny>
+          <font>font13</font>
+          <textcolor>FF6B7783</textcolor>
+          <label>$INFO[ListItem.Label]</label>
+          <visible>!Control.HasFocus(50) + !String.IsEmpty(ListItem.Property(couchseerr.inert))</visible>
+        </control>
+        <control type="label">
+          <left>790</left><top>0</top><width>154</width><height>64</height>
+          <align>right</align><aligny>center</aligny>
+          <font>font12</font>
+          <textcolor>FF08121A</textcolor>
+          <label>$INFO[ListItem.Property(couchseerr.detail)]</label>
+          <visible>Control.HasFocus(50) + String.IsEmpty(ListItem.Property(couchseerr.inert))</visible>
+        </control>
+        <control type="label">
+          <left>790</left><top>0</top><width>154</width><height>64</height>
+          <align>right</align><aligny>center</aligny>
+          <font>font12</font>
+          <textcolor>FF8FA0AF</textcolor>
+          <label>$INFO[ListItem.Property(couchseerr.detail)]</label>
+          <visible>!Control.HasFocus(50)</visible>
+        </control>
+      </focusedlayout>
+    </control>
+
+  </controls>
+</window>

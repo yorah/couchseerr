@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.couchseerr" name="Couchseerr" version="0.7.0" provider-name="yorah">
+  <requires>
+    <!-- 3.0.0 is the widest floor: Kodi 19/20 provide it directly, and Kodi 21+ declares
+         backwards-compatibility with it. Raising this excludes older installs for nothing. -->
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="main.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Browse seerr's discovery rows on your TV</summary>
+    <description lang="en_GB">Browse your seerr instance's discovery rows in Kodi. Every tile shows at a glance whether the title is owned, downloading, monitored, awaiting release, pending approval, or not yet requested, and its context menu can request it directly. Open a title to see its plot, artwork and status in a detail window, and act on it from there: request it with your default profile (or pick a server and quality profile just this once), play it when you already own it and Kodi's library can resolve it, or watch the trailer. For a TV show, the window lists its seasons; opening one lists that season's episodes, every one of them, with playable episodes distinct from ones Kodi does not hold, and offers to request the season. Search runs against seerr from the skin's own search screen. Default profiles, pairing a Radarr or Sonarr server with a quality profile, are configured from the addon's settings.</description>
+    <platform>all</platform>
+    <license>GPL-3.0-or-later</license>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>

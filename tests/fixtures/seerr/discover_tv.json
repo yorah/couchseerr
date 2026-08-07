@@ -1,0 +1,112 @@
+{
+  "page": 1,
+  "totalPages": 1,
+  "totalResults": 3,
+  "results": [
+    {
+      "id": 201,
+      "mediaType": "tv",
+      "genreIds": [
+        18
+      ],
+      "originalLanguage": "en",
+      "originalName": "Fixture Series A",
+      "overview": "Placeholder overview text for fixture purposes.",
+      "popularity": 88.2,
+      "posterPath": "/fixturePoster.jpg",
+      "backdropPath": "/fixtureBackdrop.jpg",
+      "firstAirDate": "2024-01-01",
+      "name": "Fixture Series A",
+      "voteAverage": 8.0,
+      "voteCount": 400,
+      "mediaInfo": {
+        "downloadStatus": [],
+        "downloadStatus4k": [],
+        "id": 7,
+        "mediaType": "tv",
+        "tmdbId": 201,
+        "tvdbId": 90001,
+        "imdbId": null,
+        "status": 4,
+        "status4k": 1,
+        "createdAt": "2026-01-05T10:00:00.000Z",
+        "updatedAt": "2026-01-06T10:00:00.000Z",
+        "lastSeasonChange": "2026-01-05T10:00:00.000Z",
+        "mediaAddedAt": "2026-01-05T10:00:00.000Z",
+        "serviceId": 0,
+        "serviceId4k": null,
+        "externalServiceId": 1007,
+        "externalServiceId4k": null,
+        "externalServiceSlug": "201",
+        "externalServiceSlug4k": null,
+        "ratingKey": null,
+        "ratingKey4k": null,
+        "jellyfinMediaId": null,
+        "jellyfinMediaId4k": null,
+        "seasons": [],
+        "serviceUrl": "http://radarr.example.internal/movie/201"
+      }
+    },
+    {
+      "id": 202,
+      "mediaType": "tv",
+      "genreIds": [
+        18
+      ],
+      "originalLanguage": "en",
+      "originalName": "Fixture Series B",
+      "overview": "Placeholder overview text for fixture purposes.",
+      "popularity": 88.2,
+      "posterPath": "/fixturePoster.jpg",
+      "backdropPath": "/fixtureBackdrop.jpg",
+      "firstAirDate": "2024-02-01",
+      "name": "Fixture Series B",
+      "voteAverage": 8.0,
+      "voteCount": 400,
+      "mediaInfo": {
+        "downloadStatus": [],
+        "downloadStatus4k": [],
+        "id": 8,
+        "mediaType": "tv",
+        "tmdbId": 202,
+        "tvdbId": 90001,
+        "imdbId": null,
+        "status": 5,
+        "status4k": 1,
+        "createdAt": "2026-01-05T10:00:00.000Z",
+        "updatedAt": "2026-01-06T10:00:00.000Z",
+        "lastSeasonChange": "2026-01-05T10:00:00.000Z",
+        "mediaAddedAt": "2026-01-05T10:00:00.000Z",
+        "serviceId": 0,
+        "serviceId4k": null,
+        "externalServiceId": 1008,
+        "externalServiceId4k": null,
+        "externalServiceSlug": "202",
+        "externalServiceSlug4k": null,
+        "ratingKey": null,
+        "ratingKey4k": null,
+        "jellyfinMediaId": null,
+        "jellyfinMediaId4k": null,
+        "seasons": [],
+        "serviceUrl": "http://radarr.example.internal/movie/202"
+      }
+    },
+    {
+      "id": 203,
+      "mediaType": "tv",
+      "genreIds": [
+        18
+      ],
+      "originalLanguage": "en",
+      "originalName": "Fixture Series C",
+      "overview": "Placeholder overview text for fixture purposes.",
+      "popularity": 88.2,
+      "posterPath": "/fixturePoster.jpg",
+      "backdropPath": "/fixtureBackdrop.jpg",
+      "firstAirDate": "2024-03-01",
+      "name": "Fixture Series C",
+      "voteAverage": 8.0,
+      "voteCount": 400
+    }
+  ]
+}

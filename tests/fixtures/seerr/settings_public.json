@@ -1,0 +1,15 @@
+{
+  "initialized": true,
+  "applicationTitle": "Seerr",
+  "applicationUrl": "",
+  "hideAvailable": false,
+  "localLogin": true,
+  "mediaServerLogin": true,
+  "movie4kEnabled": false,
+  "series4kEnabled": false,
+  "discoverRegion": "",
+  "streamingRegion": "US",
+  "originalLanguage": "",
+  "mediaServerType": 2,
+  "partialRequestsEnabled": true
+}

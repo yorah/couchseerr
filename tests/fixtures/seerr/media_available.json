@@ -1,0 +1,37 @@
+{
+  "pageInfo": {
+    "pages": 1,
+    "pageSize": 20,
+    "results": 1,
+    "page": 1
+  },
+  "results": [
+    {
+      "downloadStatus": [],
+      "downloadStatus4k": [],
+      "id": 1,
+      "mediaType": "movie",
+      "tmdbId": 101,
+      "tvdbId": null,
+      "imdbId": null,
+      "status": 5,
+      "status4k": 1,
+      "createdAt": "2026-01-05T10:00:00.000Z",
+      "updatedAt": "2026-01-06T10:00:00.000Z",
+      "lastSeasonChange": "2026-01-05T10:00:00.000Z",
+      "mediaAddedAt": "2026-01-05T10:00:00.000Z",
+      "serviceId": 0,
+      "serviceId4k": null,
+      "externalServiceId": 1001,
+      "externalServiceId4k": null,
+      "externalServiceSlug": "101",
+      "externalServiceSlug4k": null,
+      "ratingKey": null,
+      "ratingKey4k": null,
+      "jellyfinMediaId": null,
+      "jellyfinMediaId4k": null,
+      "seasons": [],
+      "serviceUrl": "http://radarr.example.internal/movie/101"
+    }
+  ]
+}

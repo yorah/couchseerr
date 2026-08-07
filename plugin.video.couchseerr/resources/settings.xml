@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- label and help are *string ids*, never literals. Kodi parses them with
+     QueryIntAttribute (xbmc/settings/lib/ISetting.cpp) and silently discards anything
+     non-numeric, leaving the row with an empty label. Shipped with literals, every
+     category and setting rendered blank. The ids live in
+     resources/language/resource.language.en_gb/strings.po. -->
+<settings version="1">
+  <section id="couchseerr" label="30000">
+    <category id="connection" label="30010">
+      <group id="1">
+        <setting id="seerr_url" type="string" label="30011" help="30012">
+          <level>0</level>
+          <default>http://localhost:5055</default>
+          <control type="edit" format="string">
+            <heading>30011</heading>
+          </control>
+        </setting>
+        <!-- allowempty is not optional on a setting that ships blank. Kodi's
+             CSettingString reports "error reading the default value" for a default that
+             is empty OR absent, and then drops the whole setting from the dialog;
+             allowempty is the flag that suppresses it. Shipped without it, api_key and
+             language were invisible in the settings dialog and could only be set by
+             editing addon_data by hand. -->
+        <setting id="api_key" type="string" label="30013" help="30014">
+          <level>0</level>
+          <control type="edit" format="string">
+            <heading>30013</heading>
+          </control>
+          <constraints>
+            <allowempty>true</allowempty>
+          </constraints>
+        </setting>
+      </group>
+    </category>
+    <category id="display" label="30020">
+      <group id="1">
+        <setting id="language" type="string" label="30021" help="30022">
+          <level>0</level>
+          <control type="edit" format="string">
+            <heading>30021</heading>
+          </control>
+          <constraints>
+            <allowempty>true</allowempty>
+          </constraints>
+        </setting>
+        <setting id="view_mode" type="string" label="30023" help="30024">
+          <level>0</level>
+          <control type="edit" format="string">
+            <heading>30023</heading>
+          </control>
+          <constraints>
+            <allowempty>true</allowempty>
+          </constraints>
+        </setting>
+      </group>
+    </category>
+    <category id="requests" label="30030">
+      <!-- Four default profile slots replace the named-preset model (design doc,
+           "Request configuration"). Kodi cannot populate a settings list from an API,
+           since <control type="list"> only reads static <option> elements, so each slot
+           is a type="string" setting whose value is a human label ("Radarr - VF
+           Bluray-1080p") and whose control is a button that hands off to the addon's own
+           picker. Confirmed against plugin.video.themoviedb.helper on the device: <data>
+           sits *inside* <control> here, unlike a type="action" setting where it sits
+           beside <level>. -->
+      <group id="1">
+        <setting id="profile_movie" type="string" label="30070" help="30071">
+          <level>0</level>
+          <constraints>
+            <allowempty>true</allowempty>
+          </constraints>
+          <control type="button" format="action">
+            <data>RunPlugin(plugin://plugin.video.couchseerr/?mode=profile&amp;slot=movie)</data>
+          </control>
+        </setting>
+        <setting id="profile_tv" type="string" label="30072" help="30073">
+          <level>0</level>
+          <constraints>
+            <allowempty>true</allowempty>
+          </constraints>
+          <control type="button" format="action">
+            <data>RunPlugin(plugin://plugin.video.couchseerr/?mode=profile&amp;slot=tv)</data>
+          </control>
+        </setting>
+        <!-- The two 4K slots and prefer_4k below are hidden until the addon detects a 4K
+             server, via has_4k_movie / has_4k_tv. On a fresh install every flag is false,
+             so these stay hidden until the first ordinary profile picker fetch runs,
+             which is the same fetch that discovers the 4K servers. -->
+        <setting id="profile_movie_4k" type="string" label="30074" help="30075">
+          <level>0</level>
+          <constraints>
+            <allowempty>true</allowempty>
+          </constraints>
+          <control type="button" format="action">
+            <data>RunPlugin(plugin://plugin.video.couchseerr/?mode=profile&amp;slot=movie_4k)</data>
+          </control>
+          <dependencies>
+            <dependency type="visible">
+              <condition operator="is" setting="has_4k_movie">true</condition>
+            </dependency>
+          </dependencies>
+        </setting>
+        <setting id="profile_tv_4k" type="string" label="30076" help="30077">
+          <level>0</level>
+          <constraints>
+            <allowempty>true</allowempty>
+          </constraints>
+          <control type="button" format="action">
+            <data>RunPlugin(plugin://plugin.video.couchseerr/?mode=profile&amp;slot=tv_4k)</data>
+          </control>
+          <dependencies>
+            <dependency type="visible">
+              <condition operator="is" setting="has_4k_tv">true</condition>
+            </dependency>
+          </dependencies>
+        </setting>
+        <setting id="prefer_4k" type="boolean" label="30078" help="30079">
+          <level>0</level>
+          <default>false</default>
+          <control type="toggle" />
+          <!-- CSettingDependency's default boolean op is AND (settings/lib/
+               SettingDependency.cpp), both across sibling <condition> elements in one
+               <dependency> and across separate <dependency> blocks (CSetting::IsVisible
+               ANDs its dependency results too), so there is no bare-sibling OR. An
+               explicit <or> wrapper is required to show this row when either 4K server
+               exists rather than only when both do. -->
+          <dependencies>
+            <dependency type="visible">
+              <or>
+                <condition operator="is" setting="has_4k_movie">true</condition>
+                <condition operator="is" setting="has_4k_tv">true</condition>
+              </or>
+            </dependency>
+          </dependencies>
+        </setting>
+        <!-- Written by the addon, not the user, whenever a profile picker fetches the
+             server list. <level>3</level> (expert) keeps them out of the ordinary
+             settings view rather than hiding them outright: Kodi has no "invisible to
+             everyone" level. -->
+        <setting id="has_4k_movie" type="boolean" label="30080" help="30081">
+          <level>3</level>
+          <default>false</default>
+          <control type="toggle" />
+        </setting>
+        <setting id="has_4k_tv" type="boolean" label="30082" help="30083">
+          <level>3</level>
+          <default>false</default>
+          <control type="toggle" />
+        </setting>
+      </group>
+    </category>
+  </section>
+</settings>

@@ -1,0 +1,27 @@
+{
+  "page": 1,
+  "totalPages": 1,
+  "totalResults": 1,
+  "results": [
+    {
+      "id": 108,
+      "mediaType": "movie",
+      "adult": false,
+      "genreIds": [
+        878,
+        12
+      ],
+      "originalLanguage": "en",
+      "originalTitle": "Fixture Upcoming",
+      "overview": "Placeholder overview text for fixture purposes.",
+      "popularity": 120.5,
+      "posterPath": "/fixturePoster.jpg",
+      "backdropPath": "/fixtureBackdrop.jpg",
+      "releaseDate": "2027-03-01",
+      "title": "Fixture Upcoming",
+      "video": false,
+      "voteAverage": 7.1,
+      "voteCount": 900
+    }
+  ]
+}

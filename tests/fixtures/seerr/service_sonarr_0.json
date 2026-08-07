@@ -1,0 +1,39 @@
+{
+  "server": {
+    "id": 0,
+    "name": "Series",
+    "is4k": false,
+    "isDefault": true,
+    "activeDirectory": "/series",
+    "activeProfileId": 10,
+    "activeLanguageProfileId": 1
+  },
+  "profiles": [
+    {
+      "id": 10,
+      "name": "Standard 1080p"
+    },
+    {
+      "id": 11,
+      "name": "Ultra HD 2160p"
+    }
+  ],
+  "rootFolders": [
+    {
+      "id": 1,
+      "path": "/series",
+      "freeSpace": 500000000000
+    }
+  ],
+  "languageProfiles": [
+    {
+      "id": 1,
+      "name": "Original"
+    },
+    {
+      "id": 2,
+      "name": "Dubbed"
+    }
+  ],
+  "tags": []
+}

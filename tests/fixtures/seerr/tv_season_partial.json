@@ -1,0 +1,65 @@
+{
+  "id": 3502,
+  "airDate": "2020-10-30",
+  "name": "Season 2",
+  "overview": "",
+  "posterPath": "/s2.jpg",
+  "seasonNumber": 2,
+  "externalIds": {
+    "tvdbId": 890100
+  },
+  "episodes": [
+    {
+      "id": 40201,
+      "airDate": "2020-10-30",
+      "episodeNumber": 1,
+      "name": "Groundwave",
+      "overview": "",
+      "productionCode": "",
+      "seasonNumber": 2,
+      "showId": 90100,
+      "stillPath": "https://image.tmdb.org/t/p/original//still-s2e1.jpg",
+      "voteAverage": 7.5,
+      "voteCount": 100
+    },
+    {
+      "id": 40202,
+      "airDate": "2020-11-06",
+      "episodeNumber": 2,
+      "name": "Skywave",
+      "overview": "",
+      "productionCode": "",
+      "seasonNumber": 2,
+      "showId": 90100,
+      "stillPath": "https://image.tmdb.org/t/p/original//still-s2e2.jpg",
+      "voteAverage": 7.5,
+      "voteCount": 100
+    },
+    {
+      "id": 40203,
+      "airDate": "2026-11-04",
+      "episodeNumber": 3,
+      "name": "Episode 3",
+      "overview": "",
+      "productionCode": "",
+      "seasonNumber": 2,
+      "showId": 90100,
+      "stillPath": null,
+      "voteAverage": 7.5,
+      "voteCount": 100
+    },
+    {
+      "id": 40204,
+      "airDate": "2026-11-11",
+      "episodeNumber": 4,
+      "name": "Episode 4",
+      "overview": "",
+      "productionCode": "",
+      "seasonNumber": 2,
+      "showId": 90100,
+      "stillPath": null,
+      "voteAverage": 7.5,
+      "voteCount": 100
+    }
+  ]
+}
